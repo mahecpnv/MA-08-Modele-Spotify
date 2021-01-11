@@ -46,3 +46,24 @@ USE Spotify;
  Featuring varchar(45) not null,
  Duration Time not null,
  )
+							   -- |
+ -- Pas encore fais les attributs v
+
+   --------------------------------
+ -- Céer la 5 ème table "Prenium"
+ --------------------------------
+ Create TABLE Prenium (
+ id int primary key not null identity (1,1),
+ Title varchar(15) not null,
+ Featuring varchar(45) not null,
+ Duration Time not null,
+ )
+   --------------------------------
+ -- Céer la 6 ème table "Playlists"
+ --------------------------------
+ Create TABLE Playlists (
+ id int primary key not null identity (1,1),
+ Title varchar(15) not null,
+ Featuring varchar(45) not null,
+ Duration Time not null,
+ )

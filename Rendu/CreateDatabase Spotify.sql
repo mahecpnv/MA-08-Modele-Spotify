@@ -9,7 +9,6 @@ USE master;
 
 DROP DATABASE IF EXISTS Spotify;
 
---We use the default parameters to create the database
 CREATE DATABASE Spotify
 	ON  PRIMARY 
 	( NAME = 'Spotify', FILENAME = 'C:\Data\MA-08\Spotify.mdf' , SIZE = 20480KB , MAXSIZE = 51200KB, FILEGROWTH = 1024KB )
@@ -22,11 +21,11 @@ CREATE DATABASE Spotify
  -- Céer la 1 ère table "Users"
  --------------------------------
  Create TABLE Users (
- id int primary key not null identity (1,1),
+ id int primary key identity(1,1) not null ,
  Username varchar(45) not null,
  Email varchar(45) not null,
  [Password] varchar(45) not null,
- PhoneNumber int not null,
+ PhoneNumber varchar(45) not null,
  PlaylistNumber int not null,
  SubscritionNumber int not null
  )
@@ -35,7 +34,7 @@ CREATE DATABASE Spotify
  -- Céer la 2 ème table "Music"
  --------------------------------
  Create TABLE Music (
- id int primary key not null identity (1,1),
+ id int primary key  identity(1,1) not null,
  Title varchar(45) not null,
  Featuring varchar(45) not null,
  Duration Datetime not null
@@ -45,11 +44,11 @@ CREATE DATABASE Spotify
  -- Céer la 3 ème table "Artist"
  --------------------------------
  Create TABLE Artist (
- id int primary key not null identity (1,1),
+ id int primary key  identity(1,1) not null,
  Username varchar(15) not null,
  Email varchar(45) not null,
  [Password] varchar(45) not null,
- PhoneNumber int not null,
+ PhoneNumber varchar(45) not null,
  PlaylistNumber int not null,
  SubscriberNumber int not null
  )
@@ -124,3 +123,5 @@ CREATE DATABASE Spotify
  Title varchar(45) not null,
  MusicNumber int not null
  )
+
+--  ALTER TABLE Register interface_id INT FOREIGN KEY REFERENCES Interface(id);

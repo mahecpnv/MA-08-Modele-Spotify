@@ -1,6 +1,7 @@
 /*
 	Author : Mahé Lavaud & Jean Bösch
 	Description : Database de Spotify pour le projet à deux de la semaine COM.
+	Date : 15.01.2021
 */
 
 -- Créer la base de données "Spotify"

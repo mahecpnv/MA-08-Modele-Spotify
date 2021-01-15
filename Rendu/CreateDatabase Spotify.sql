@@ -2,9 +2,20 @@
 	Author : Mahé Lavaud & Jean Bösch
 	Description : Database de Spotify pour le projet à deux de la semaine COM.
 */
-  
+
 -- Créer la base de données "Spotify"
-create database Spotify;
+USE master;
+
+DROP DATABASE IF EXISTS Spotify;
+
+--We use the default parameters to create the database
+CREATE DATABASE Spotify
+	ON  PRIMARY 
+	( NAME = 'Spotify', FILENAME = 'C:\Data\MA-08\Spotify.mdf' , SIZE = 20480KB , MAXSIZE = 51200KB, FILEGROWTH = 1024KB )
+	LOG ON 
+	( NAME = 'Spotify_log', FILENAME = 'C:\Data\MA-08\Spotify_log.ldf' , SIZE = 10240KB , MAXSIZE = 20480KB , FILEGROWTH = 1024KB)
+
+	USE Spotify;
 
  --------------------------------
  -- Céer la 1 ère table "Users"
@@ -13,10 +24,10 @@ create database Spotify;
  id int primary key not null identity (1,1),
  Username varchar(45) not null,
  Email varchar(45) not null,
- Password varchar(45) not null,
+ [Password] varchar(45) not null,
  Phonenumber int not null,
  PlaylistNumber int not null,
- SubscritionNumber int not null,
+ SubscritionNumber int not null
  )
  
  --------------------------------
@@ -26,7 +37,7 @@ create database Spotify;
  id int primary key not null identity (1,1),
  Title varchar(45) not null,
  Featuring varchar(45) not null,
- Duration Datetime not null,
+ Duration Datetime not null
  )
 
   --------------------------------
@@ -36,10 +47,10 @@ create database Spotify;
  id int primary key not null identity (1,1),
  Pseudo varchar(15) not null,
  Email varchar(45) not null,
- "Password" varchar(45) not null,
+ [Password] varchar(45) not null,
  Phonenumber int not null,
  Playlistnumber int not null,
- Subscribernumber int not null,
+ Subscribernumber int not null
  )
 
  --------------------------------
@@ -48,7 +59,7 @@ create database Spotify;
  Create TABLE Formats (
  id int primary key not null identity (1,1),
  Formatname varchar(45) not null,
- MaxMusic int not null,
+ MaxMusic int not null
  )
 
  --------------------------------
@@ -58,7 +69,7 @@ create database Spotify;
  id int primary key not null identity (1,1),
  Packagetype varchar(45) not null,
  Cost int not null,
- Renewaldate datetime  not null,
+ Renewaldate datetime  not null
  )
 
  --------------------------------
@@ -68,8 +79,8 @@ create database Spotify;
  id int primary key not null identity (1,1),
  Names varchar(45) not null,
  Creator varchar(45) not null,
- Time Time not null,
- CreationDate date not null,
+ [Time] Time not null,
+ CreationDate date not null
  )
 
   --------------------------------
@@ -82,7 +93,7 @@ create database Spotify;
  CCV int not null,
  ExpirationDate datetime not null,
  Firstname varchar(45) not null,
- Lastname varchar(45) not null,
+ Lastname varchar(45) not null
  )
 
  --------------------------------
@@ -91,17 +102,17 @@ create database Spotify;
  Create TABLE Searchstyle (
  id int primary key not null identity (1,1),
  Names varchar(45) not null,
- Musicstyle varchar(45) not null,
+ Musicstyle varchar(45) not null
  )
 
  --------------------------------
  -- Céer la 9 ème table "Interface"
- --------------------------------
+ --------------------------------s
  Create TABLE Interface (
  id int primary key not null identity (1,1),
  SelectionType varchar(45) not null,
  FavoriteStyle varchar(45) not null,
- SuggestedStyle varchar(45) not null,
+ SuggestedStyle varchar(45) not null
  )
 
  --------------------------------
@@ -110,5 +121,5 @@ create database Spotify;
  Create TABLE Register (
  id int primary key not null identity (1,1),
  Title varchar(45) not null,
- MusicNumber int not null,
+ MusicNumber int not null
  )

@@ -50,7 +50,7 @@ CREATE DATABASE Spotify
  [Password] varchar(45) not null,
  PhoneNumber varchar(45) not null,
  PlaylistNumber int not null,
- SubscriberNumber int not null
+ SubscriberNumber bigint not null
  )
 
  --------------------------------
@@ -88,8 +88,8 @@ CREATE DATABASE Spotify
  --------------------------------
  Create TABLE BankData (
  id int primary key not null identity (1,1),
- IBAN int not null,
- CardNumber int not null,
+ IBAN varchar(1000) not null,
+ CardNumber bigint not null,
  CCV int not null,
  ExpirationDate datetime not null,
  Firstname varchar(45) not null,
@@ -100,7 +100,7 @@ CREATE DATABASE Spotify
  -- Céer la 8 ème table "Searchstyle"
  --------------------------------
  Create TABLE Searchstyle (
- id int primary key not null identity (1,1),
+ id bigint primary key not null identity (1,1),
  Names varchar(45) not null,
  MusicStyle varchar(45) not null
  )
@@ -116,12 +116,10 @@ CREATE DATABASE Spotify
  )
 
  --------------------------------
- -- Céer la 10 ème table "Register"
+ -- Céer la 10 ème table "Register"FavoriteStyle 
  --------------------------------
  Create TABLE Register (
  id int primary key not null identity (1,1),
  Title varchar(45) not null,
  MusicNumber int not null
  )
-
---  ALTER TABLE Register interface_id INT FOREIGN KEY REFERENCES Interface(id);

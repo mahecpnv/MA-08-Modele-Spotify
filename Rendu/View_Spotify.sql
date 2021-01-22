@@ -30,7 +30,7 @@ CREATE VIEW SpotifyView AS SELECT * FROM
     (SELECT COUNT(*) AS "Formats" FROM Formats) as Formats,
     (SELECT COUNT(*) AS "Music" FROM Music) as Music,
     (SELECT COUNT(*) AS "Searchstyle" FROM Searchstyle) as Searchstyle,
-    (SELECT COUNT(*) AS "Premium" FROM Prenium) as Premium,
+    (SELECT COUNT(*) AS "Premium" FROM Premium) as Premium,
     (SELECT COUNT(*) AS "Playlists" FROM Playlists) as Playlists
 ;
 

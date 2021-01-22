@@ -58,9 +58,9 @@ CREATE DATABASE Spotify;
  )
 
  --------------------------------
- -- Céer la 5 ème table "Prenium"
+ -- Céer la 5 ème table "Premium"
  --------------------------------
- Create TABLE Prenium (
+ Create TABLE Premium (
  id int primary key not null identity (1,1),
  PackageType varchar(45) not null,
  Cost int not null,

@@ -5,15 +5,10 @@
 */
 
 -- Créer la base de données "Spotify"
-USE master;
 
 DROP DATABASE IF EXISTS Spotify;
 
-CREATE DATABASE Spotify
-	ON  PRIMARY 
-	( NAME = 'Spotify', FILENAME = 'C:\Data\MA-08\Spotify.mdf' , SIZE = 20480KB , MAXSIZE = 51200KB, FILEGROWTH = 1024KB )
-	LOG ON 
-	( NAME = 'Spotify_log', FILENAME = 'C:\Data\MA-08\Spotify_log.ldf' , SIZE = 10240KB , MAXSIZE = 20480KB , FILEGROWTH = 1024KB)
+CREATE DATABASE Spotify;
 
 	USE Spotify;
 
